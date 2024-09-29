@@ -8,3 +8,8 @@
 /tmp/
 
 *.lock
+
+*.so
+*.bundle
+*.dylib
+*.dll
