@@ -1,5 +1,7 @@
 # ruby-d4
 
+[![test](https://github.com/kojix2/ruby-d4/actions/workflows/test.yml/badge.svg)](https://github.com/kojix2/ruby-d4/actions/workflows/test.yml)
+
 :cat: [d4](https://github.com/38/d4-format) - Dense Depth Data Dump - for Ruby
 
 ## Installation
