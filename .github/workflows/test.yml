@@ -13,10 +13,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      - name: Build d4binding
+        run: bundle exec rake d4:build
       - name: Run test
         run: bundle exec rake test
