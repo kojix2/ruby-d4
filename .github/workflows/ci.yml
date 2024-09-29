@@ -1,0 +1,22 @@
+name: test
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}-latest
+    name: ${{ matrix.os }} ruby ${{ matrix.ruby }}
+    strategy:
+      matrix:
+        os: [ubuntu, macos]
+        ruby: [3.3]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
+      - name: Run test
+        run: bundle exec rake test
